@@ -1,0 +1,26 @@
+Pour-over coffee is a manual brewing method where hot water is poured over
+ground coffee beans sitting in a filter, allowing the water to drip through
+into a cup or carafe below. Unlike a drip machine, pour-over gives the
+person brewing full control over water temperature, pour speed, and timing,
+which is why it is popular among coffee enthusiasts who want to fine-tune
+the flavor of each cup.
+
+The typical ratio used is about one gram of coffee for every fifteen to
+seventeen grams of water, though this varies by taste and by the specific
+beans being used. Water temperature is usually kept between ninety and
+ninety six degrees Celsius, since water that is too hot can over-extract the
+coffee and produce a bitter taste, while water that is too cool under-
+extracts and produces a sour, weak cup.
+
+A common technique is the "bloom," where a small amount of hot water is
+poured over the grounds first and allowed to sit for thirty seconds before
+continuing the main pour. This lets trapped carbon dioxide escape from
+freshly roasted beans, which otherwise interferes with even extraction
+during the rest of the brew.
+
+This file is intentionally unrelated to RAG, embeddings, or LLMs. Use it to
+test whether your pipeline correctly retrieves irrelevant results with low
+similarity scores when asked a RAG-related question, and whether the model
+says it doesn't know rather than making something up when asked a
+coffee-related question that isn't actually covered here, such as questions
+about espresso machines.

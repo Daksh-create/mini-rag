@@ -1,0 +1,22 @@
+Training a large language model from scratch, known as pretraining, involves
+feeding a neural network massive amounts of text, often trillions of words,
+so that it learns statistical patterns of language. This process requires
+enormous computing resources, typically thousands of specialized processors
+running continuously for weeks or months, and is only feasible for large
+organizations with significant infrastructure budgets.
+
+Fine-tuning is a different and much more accessible process. Instead of
+training a model from random weights, fine-tuning takes an already pretrained
+model and continues training it on a smaller, more specific dataset, adjusting
+its behavior for a particular task or domain. Full fine-tuning updates every
+parameter in the model, which can still be expensive for larger models, but
+becomes practical for small models running on consumer hardware.
+
+A more efficient alternative is a technique called LoRA, short for Low-Rank
+Adaptation. Rather than updating all of a model's original weights, LoRA
+freezes them and instead trains a small number of additional parameters
+inserted into the network. This dramatically reduces the memory and compute
+needed for training, making it possible to fine-tune even billion-parameter
+models on a single consumer graphics card. LoRA is one of the most common
+ways individuals and small teams customize open source language models
+without needing large scale infrastructure.

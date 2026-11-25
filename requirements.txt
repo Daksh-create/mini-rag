@@ -1,0 +1,14 @@
+# Embedding + reranking models
+sentence-transformers>=3.0.0
+
+# Vector similarity search (local, in-process, no server needed)
+faiss-cpu>=1.8.0
+
+# Numerical operations
+numpy>=1.26.0
+
+# Talk to your local Ollama server (which runs the LLM)
+ollama>=0.3.0
+
+# Optional: read PDF files as source documents (skip if you only use .txt)
+pypdf>=4.0.0

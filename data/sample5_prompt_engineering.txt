@@ -1,0 +1,29 @@
+Prompt engineering refers to the practice of carefully designing the input
+text given to a language model in order to get more accurate, relevant, or
+consistently formatted outputs, without changing the model itself. In a RAG
+system, the prompt is where the retrieved context gets combined with the
+user's question before being sent to the model, so the way that prompt is
+structured has a significant effect on answer quality.
+
+A common and effective technique is to explicitly instruct the model to only
+answer using the provided context, and to say it does not know the answer if
+the context does not contain it. Without this instruction, language models
+will often fall back on their own internal training knowledge to fill gaps,
+which defeats the purpose of retrieval grounding and can reintroduce
+hallucination, especially for questions the retrieved chunks only partially
+answer.
+
+Another useful technique is clearly labeling each piece of retrieved context
+with its source, for example including the filename or document title above
+each chunk in the prompt. This allows the model to cite where information
+came from in its answer, which makes the system's outputs easier to verify
+and builds user trust, particularly important in professional or research
+settings where unverified claims are risky.
+
+The order in which context chunks are presented in the prompt can also
+matter. Some research has found that language models pay more attention to
+information placed at the very beginning or the very end of a long prompt,
+and can partially ignore information buried in the middle, an effect
+sometimes called "lost in the middle." This is one reason reranking matters,
+since it ensures the most relevant chunks are not just included, but placed
+prominently.

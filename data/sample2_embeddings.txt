@@ -1,0 +1,21 @@
+An embedding model converts text into a list of numbers, called a vector, such
+that pieces of text with similar meaning end up close together in that
+numerical space. For example, the sentences "the cat sat on the mat" and "a
+feline rested on the rug" would produce vectors that are close to each other,
+even though they share almost no exact words, because a good embedding model
+captures meaning rather than just matching words.
+
+Large embedding models such as those with hundreds of millions of parameters
+tend to produce higher quality vectors but are slower and require more memory.
+For applications that need to run on limited hardware, smaller embedding
+models are preferred. Models like all-MiniLM-L6-v2 have only around twenty
+two million parameters and produce three hundred eighty four dimensional
+vectors, yet still perform well on many retrieval tasks while running quickly
+even on a CPU.
+
+Once documents are embedded, they are stored in a vector database or a vector
+index. This is a specialized data structure optimized for finding the nearest
+vectors to a given query vector very quickly, even among millions of stored
+vectors. FAISS, developed by Meta, is a popular library for building such
+indexes locally without needing a separate database server, which makes it
+convenient for small projects and experiments running on a single laptop.

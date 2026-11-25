@@ -1,0 +1,28 @@
+A vector database is a specialized storage system designed to hold high
+dimensional vectors and allow fast similarity search across them, rather
+than exact matching the way a traditional SQL database works. When you query
+a vector database, you are not asking "give me the row where id = 5," you
+are asking "give me the vectors that are closest in meaning to this other
+vector," which is a fundamentally different kind of search problem.
+
+Under the hood, most vector databases use an approximate nearest neighbor
+algorithm rather than checking every single stored vector one by one, since
+comparing a query against millions or billions of vectors exactly would be
+far too slow for real time applications. Popular approximate methods include
+HNSW, short for Hierarchical Navigable Small World graphs, and IVF, short for
+Inverted File Index. These trade a small amount of accuracy for a very large
+speedup.
+
+For small scale projects, an exact search index such as a flat FAISS index is
+often preferred over an approximate one, because the dataset is small enough
+that an exact brute force comparison is still fast, and exact search
+guarantees you always find the true nearest neighbors rather than an
+approximation. As a project grows past a few hundred thousand vectors,
+switching to an approximate index or a managed vector database service
+usually becomes necessary to keep query latency low.
+
+Popular vector database options range from fully local libraries like FAISS
+and Chroma, which run in process with no separate server, to managed cloud
+services like Pinecone, Weaviate, Qdrant, and Milvus, which are designed to
+scale to production workloads with millions of users and are usually chosen
+once a RAG system moves beyond the prototype stage.
